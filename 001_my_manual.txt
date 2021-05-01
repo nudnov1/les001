@@ -44,3 +44,52 @@ against your template to update your template to be compatible with the current
 version of Packer. Visit https://www.packer.io/docs/commands/fix/ for more
 detail.
 
+packer fix centos1.json > centos.json
+
+
+packer>packer build centos.json
+centos-7.7: output will be in this color.
+
+==> centos-7.7: Retrieving Guest additions
+==> centos-7.7: Trying C:\Program Files\Oracle\VirtualBox/VBoxGuestAdditions.iso
+==> centos-7.7: Trying file://C:/Program%20Files/Oracle/VirtualBox/VBoxGuestAdditions.iso
+==> centos-7.7: file://C:/Program%20Files/Oracle/VirtualBox/VBoxGuestAdditions.iso => C:/Program Files/Oracle/VirtualBox/VBoxGuestAdditions.iso
+==> centos-7.7: Retrieving ISO
+==> centos-7.7: Trying http://mirror.corbina.net/pub/Linux/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso
+==> centos-7.7: Trying http://mirror.corbina.net/pub/Linux/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso?checksum=sha256%3A07b94e6b1a0b0260b94c83d6bb76b26bf7a310dc78d7a9c7432809fb9bc6194a
+==> centos-7.7: http://mirror.corbina.net/pub/Linux/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso?checksum=sha256%3A07b94e6b1a0b0260b94c83d6bb76b26bf7a310dc78d7a9c7432809fb9bc6194a => c:\Users\aleks\Documents\GitHub\les001\packer\packer_cache\e476ea1d3ef3c2e3966a7081ac4239cd5ae5e8a3.iso
+==> centos-7.7: Starting HTTP server on port 8880
+==> centos-7.7: Creating virtual machine...
+==> centos-7.7: Creating hard drive builds\packer-centos-vm.vdi with size 10240 MiB...
+==> centos-7.7: Mounting ISOs...
+    centos-7.7: Mounting boot ISO...
+==> centos-7.7: Creating forwarded port mapping for communicator (SSH, WinRM, etc) (host port 2608)
+==> centos-7.7: Executing custom VBoxManage commands...
+    centos-7.7: Executing: modifyvm packer-centos-vm --memory 1024
+    centos-7.7: Executing: modifyvm packer-centos-vm --cpus 2
+==> centos-7.7: Starting the virtual machine...
+==> centos-7.7: Waiting 10s for boot...
+==> centos-7.7: Typing the boot command...
+==> centos-7.7: Using ssh communicator to connect: 127.0.0.1
+==> centos-7.7: Waiting for SSH to become available...
+==> centos-7.7: Connected to SSH!
+==> centos-7.7: Uploading VirtualBox version info (6.1.20)
+==> centos-7.7: Uploading VirtualBox guest additions ISO...
+==> centos-7.7: Pausing 20s before the next provisioner...
+==> centos-7.7: Provisioning with shell script: scripts/stage-1-kernel-update.sh
+    centos-7.7: >>> /etc/sudoers.d/vagrant: syntax error near line 1 <<<
+    centos-7.7: sudo: parse error in /etc/sudoers.d/vagrant near line 1
+    centos-7.7: sudo: no valid sudoers sources found, quitting
+    centos-7.7: sudo: unable to initialize policy plugin
+==> centos-7.7: Provisioning step had errors: Running the cleanup provisioner, if present...
+==> centos-7.7: Cleaning up floppy disk...
+==> centos-7.7: Deregistering and deleting VM...
+==> centos-7.7: Deleting output directory...
+Build 'centos-7.7' errored after 10 minutes 9 seconds: Script exited with non-zero exit status: 1.Allowed exit codes are: [0]
+
+==> Wait completed after 10 minutes 9 seconds
+
+==> Some builds didn't complete successfully and had errors:
+--> centos-7.7: Script exited with non-zero exit status: 1.Allowed exit codes are: [0]
+
+==> Builds finished but no artifacts were created.
