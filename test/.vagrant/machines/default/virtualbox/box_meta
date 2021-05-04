@@ -1,1 +1,1 @@
-{"name":"centos-7-5","version":"0","provider":"virtualbox","directory":"boxes/centos-7-5/0/virtualbox"}
+{"name":"anudnov/centos-7-5","version":"1.0","provider":"virtualbox","directory":"boxes/anudnov-VAGRANTSLASH-centos-7-5/1.0/virtualbox"}
